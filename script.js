@@ -48,7 +48,6 @@ fetch(
     });
 
     let produit = data.produits;
-    
 
     produit.forEach((Sneakers) => {
       const containerProduit = document.getElementById("Divproduits");
@@ -66,23 +65,20 @@ fetch(
       Card.appendChild(CardDescription);
       Card.appendChild(Cardimg);
     });
+
+    let temoignage = data.temoignages;
+
+    temoignage.forEach((avis) => {
+      const containerTemoignage = document.getElementById("Divtemoignages");
+      const card = document.createElement("div");
+      const cardPrenom = document.createElement("h4");
+      const cardCommentaire = document.createElement("p");
+
+      cardPrenom.textContent = avis.prenom;
+      cardCommentaire.textContent = avis.commentaire;
+
+      containerTemoignage.appendChild(card);
+      card.appendChild(cardPrenom);
+      card.appendChild(cardCommentaire);
+    });
   });
-// 🔴🔴 Niveau 4 – Afficher les témoignages
-// Pour chaque témoignage dans les données JSON, crée dynamiquement une div contenant le prénom, le commentaire.
-// Ajoute ces témoignages sous les activités dans la page.
-let temoignage = data.temoignages;
-
-temoignage.forEach(avis => {
-  const containerTemoignage = document.getElementById("Divtemoignages");
-  const card = document.createElement("div");
-  const cardPrenom = document.createElement("h4");
-  const cardDescription = document.createElement("p");
-
-  cardPrenom.textContent = avis.prenom;
-  cardDescription.textContent = avis.cardDescription;
-
-   
-
-
-
-});
